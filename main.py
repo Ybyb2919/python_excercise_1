@@ -1,5 +1,4 @@
 from collections import namedtuple
-# test1, feature
 
 City = namedtuple("City", "name country population")
 Country = namedtuple("Country", "name population")
@@ -73,15 +72,15 @@ def ten_biggest_countries(cities, x):
 
 
 def ten_biggest_cities(cities, x):
-    cities_sorted = sorted(cities, key=get_population)
+    cities_sorted = sorted(cities, key=lambda cities:cities.population)
     for i in range(x):
         print(cities_sorted.pop())
 
 if __name__  == '__main__':
     cities = create_city_list()
     # choose what assignment to execute:
-    # ten_biggest_cities(cities, 10)
-    ten_biggest_countries(cities, 10)
+    ten_biggest_cities(cities, 10)
+    # ten_biggest_countries(cities, 10)
 
 
 
